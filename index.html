@@ -12,10 +12,29 @@
                 page3.classList.add('visible');
             }
         });</script><script>const originalTitle = "Vulpes - Better Discord-Wide Commands";
-        const movingTitle = "✨ Vulpes - Better Discord-Wide Commands ✨";
-        let isOriginalTitle = true;
+        const movingTitle = "Vulpes - Better Discord-Wide Commands";  for movement
+        const titleElement = document.getElementById('dynamic-title');
+
+        let titleIndex = 0;
+        let movingRight = true;
+
+        function updateTitle() {
+            const space = ' '.repeat(titleIndex);
+            titleElement.innerText = space + movingTitle;
+
+            if (movingRight) {
+                titleIndex++;
+                if (titleIndex > 10) { 
+                    movingRight = false;
+                }
+            } else {
+                titleIndex--;
+                if (titleIndex < 0) {
+                    movingRight = true;
+                }
+            }
+        }
 
         setInterval(() => {
-            document.title = isOriginalTitle ? movingTitle : originalTitle;
-            isOriginalTitle = !isOriginalTitle;
-        }, 1000);</script></body></html>
+            updateTitle();
+        }, 100);</script></body></html>
