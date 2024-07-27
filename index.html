@@ -11,4 +11,11 @@
             if (page3Position < windowHeight * 0.8) {
                 page3.classList.add('visible');
             }
-        });</script></body></html>
+        });</script><script>const originalTitle = "Vulpes - Better Discord-Wide Commands";
+        const movingTitle = "✨ Vulpes - Better Discord-Wide Commands ✨";
+        let isOriginalTitle = true;
+
+        setInterval(() => {
+            document.title = isOriginalTitle ? movingTitle : originalTitle;
+            isOriginalTitle = !isOriginalTitle;
+        }, 1000);</script></body></html>
